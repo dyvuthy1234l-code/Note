@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'highlight.js/styles/github-dark.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #0f172a;
+}
+
+:root.theme-light {
+  color-scheme: light;
+  background: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(145deg, #0f172a 0%, #111827 48%, #070b16 100%);
+  background-size: 40px 40px, 40px 40px, auto;
+  color: #f8fafc;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.theme-light body {
+  background: #ffffff;
+  color: #000000;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.45);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #312e81;
+  border-radius: 999px;
+}
+
+@layer components {
+  .glass-card {
+    @apply border border-white/10 bg-white/[0.065] shadow-luxury backdrop-blur-2xl;
+  }
+
+  .input {
+    @apply w-full rounded-2xl border border-white/10 bg-slate-950/55 px-4 py-3 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-violet-300/80 focus:ring-4 focus:ring-violet-500/15;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-violet-600 px-4 py-2.5 text-sm font-bold text-white shadow-glow transition duration-300 hover:-translate-y-0.5 hover:bg-violet-500 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3.5 py-2.5 text-sm font-semibold text-slate-200 transition duration-300 hover:-translate-y-0.5 hover:border-violet-300/40 hover:bg-violet-500/10 hover:text-white active:scale-[0.98];
+  }
+
+  .icon-btn {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-slate-300 transition duration-300 hover:-translate-y-0.5 hover:border-violet-300/40 hover:bg-violet-500/10 hover:text-white;
+  }
+
+  .luxury-panel {
+    @apply border border-white/10 bg-gradient-to-br from-white/[0.09] via-white/[0.055] to-white/[0.025] shadow-luxury backdrop-blur-2xl;
+  }
+
+  .soft-divider {
+    @apply border-white/10;
+  }
+}
+
+@layer utilities {
+  .theme-light .glass-card {
+    @apply border-slate-200 bg-white shadow-slate-200/80;
+  }
+
+  .theme-light .input {
+    @apply border-slate-300 bg-white text-black focus:border-sky-500 focus:ring-sky-500/15;
+  }
+
+  .theme-light .input::placeholder {
+    color: rgb(100 116 139);
+  }
+
+  .theme-light select.input option {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .theme-light .btn-ghost {
+    @apply border-slate-300 bg-slate-100 text-slate-900 hover:border-sky-500/40 hover:bg-sky-100 hover:text-black;
+  }
+
+  .theme-light .icon-btn {
+    @apply border-slate-300 bg-slate-100 text-slate-700 hover:border-sky-500/40 hover:bg-sky-100 hover:text-black;
+  }
+
+  .theme-light .bg-ink\/80,
+  .theme-light .bg-slate-950\/95,
+  .theme-light .bg-slate-900\/70,
+  .theme-light .bg-slate-900\/\[0\.68\],
+  .theme-light .bg-slate-950\/60 {
+    background-color: rgba(255, 255, 255, 0.94);
+  }
+
+  .theme-light .bg-white\/5,
+  .theme-light .bg-sky-400\/10 {
+    background-color: rgba(241, 245, 249, 0.9);
+  }
+
+  .theme-light .border-white\/5,
+  .theme-light .border-white\/10,
+  .theme-light .border-sky-300\/20,
+  .theme-light .border-sky-300\/30 {
+    border-color: rgb(226 232 240);
+  }
+
+  .theme-light .text-white,
+  .theme-light .text-slate-100,
+  .theme-light .text-slate-200,
+  .theme-light .text-slate-300,
+  .theme-light .text-sky-200 {
+    color: #000000;
+  }
+
+  .theme-light .text-slate-400,
+  .theme-light .text-slate-500 {
+    color: rgb(71 85 105);
+  }
+
+  .theme-light .text-sky-300 {
+    color: rgb(2 132 199);
+  }
+
+  .theme-light .shadow-black\/20,
+  .theme-light .shadow-black\/40,
+  .theme-light .shadow-glow {
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  }
+
+  .theme-light ::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  .theme-light ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+  }
+}
